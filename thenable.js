@@ -26,6 +26,10 @@ const thenable = {
 
     await thenable;
 
+    console.log('after thenable');
+
+    Promise.resolve().then(() => console.log('third promise 1')).then(() => console.log('third promise 2'));
+
     console.log('1 -> 2');
 
     await thenable;
