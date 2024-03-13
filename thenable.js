@@ -2,8 +2,8 @@
 
 const thenable = {
   then(onFulfilled) {
-    console.log('thenable')
-    onFulfilled();
+    console.log('in then')
+    onFulfilled('thenable');
   }
 };
 
@@ -24,7 +24,8 @@ const thenable = {
 
     console.log('before thenable');
 
-    await thenable;
+    const m1 = await thenable;
+    console.log(m1);
 
     console.log('after thenable');
 
@@ -32,7 +33,7 @@ const thenable = {
 
     console.log('1 -> 2');
 
-    await thenable;
+    await 1;
 
     console.log('finish');
 })();
